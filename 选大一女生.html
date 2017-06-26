@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var infos = [
+        ['小A', '女', 21, '大一'],
+        ['小B', '男', 23, '大三'],
+        ['小C', '男', 24, '大四'],
+        ['小D', '女', 21, '大一'],
+        ['小E', '女', 22, '大四'],
+        ['小F', '男', 21, '大一'],
+        ['小G', '女', 22, '大二'],
+        ['小H', '女', 20, '大三'],
+        ['小I', '女', 20, '大一'],
+        ['小J', '男', 20, '大三']];
+    for (var i = 0; i < infos.length; i++) {
+        if ((infos[i][3] == '大一' && infos[i][1] == '女')) {
+            console.log(infos[i]);
+        }
+    }
+</script>
+</body>
+</html>

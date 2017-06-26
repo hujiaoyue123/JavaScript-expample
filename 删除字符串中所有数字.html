@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //删除字符串中所有的数字
+    // removeNum('343abd8c'); // 输出 'abdc‘
+        function removeNum(str) {
+            var arr = str.split('');
+            parseInt(arr);
+            for (var i = 0; i < arr.length; i++) {
+                if (!isNaN(arr[i])) {
+                delete arr[i];
+                }
+            }
+            return arr.join('');
+        }
+        console.log(removeNum('343abd8c'));
+        //方法二
+    //    function removeNum(str) {
+    //        var str1 = '';
+    //        for (var i = 0; i < str.length; i++) {
+    //            if (isNaN(str.charAt(i))) {
+    //                str1 = str1 + str.charAt(i);
+    //            }
+    //        }
+    //        console.log(str1);
+    //    }
+    //    removeNum('ssssssss344343sdfsdfsfsdf');
+</script>
+</body>
+</html>

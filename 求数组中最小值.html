@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //求数组最小值的函数
+        function smallestArr(arr) {
+            var result=arr[0];
+            for(var i=1;i<arr.length;i++){
+                if(arr[i]<result){
+                    result=arr[i];
+                }
+            }
+            return result
+        }
+        console.log(smallestArr([1, 4,-4, 78, 34, 69]));
+</script>
+</body>
+</html>

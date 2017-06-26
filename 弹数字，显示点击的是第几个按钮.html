@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--弹数字，显示点击的是第几个按钮。知识点：nodeType e.target-->
+<div id="father">
+    <button>苹果</button>
+    <button>香蕉</button>
+    <button>橘子</button>
+    <button>哈密瓜</button>
+</div>
+<div id="father2">
+    <button>a</button>
+    <button>b</button>
+    <button>c</button>
+
+</div>
+
+<script>
+    var fa = document.getElementById('father');
+    fa.addEventListener('click', function (e) {
+        var newArr = [];
+        for (var i = 0; i < fa.childNodes.length; i++) {
+            if (fa.childNodes[i].nodeType == 1) {
+                newArr.push(fa.childNodes[i])
+            }
+        }
+        for (var i = 0; i < newArr.length; i++) {
+            if (newArr[i] == e.target) {
+                console.log(e.target);
+                alert(i + 1);
+            }
+        }
+    });
+</script>
+
+<script>
+    var fa2 = document.getElementById('father2');
+    var buttons = fa2.getElementsByTagName('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].val = i;
+        buttons[i].addEventListener('click', function (e) {
+            console.log(e.target.val + 1);
+            alert(e.target.val + 1);
+        });
+    }
+</script>
+</body>
+</html>

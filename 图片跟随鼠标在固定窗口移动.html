@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<div id="box" style="margin:30px 0 0 40px;width: 500px;height: 500px;background: chartreuse;position: relative">
+    <img id="img" style="position: absolute" src="a.jpg" alt="">
+</div>
+<div style="height: 1000px"></div>
+<script>
+    var father = document.getElementById('box');
+    var image = document.getElementById('img');
+    father.addEventListener('mousemove', function (e) {
+        var boxWidth = father.offsetWidth;
+        var boxHeight = father.offsetHeight;
+        var imgHeight = image.offsetHeight;
+        var imgWidth = image.offsetWidth;
+        var resultX = e.clientX - father.offsetLeft - imgWidth / 2 + document.body.scrollLeft;
+        var resultY = e.clientY - father.offsetTop - imgWidth / 2 + document.body.scrollTop;
+        //进行合法性判断
+        if (resultX < 0) {
+            resultX = 0;
+        }
+        ;
+        if (resultX > boxWidth - imgWidth) {
+            resultX = boxWidth - imgWidth;
+        }
+        ;
+        if (resultY < 0) {
+            resultY = 0;
+        }
+        ;
+        if (resultY > boxHeight - imgHeight) {
+            resultY = boxHeight - imgHeight;
+        }
+        ;
+        image.style.left = resultX + 'px';
+        image.style.top = resultY + 'px';
+    })
+
+</script>
+</body>
+</html>

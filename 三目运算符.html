@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    method3 三目运算
+    function find(str, searchStr) {
+        var index = str.indexOf(searchStr);
+        var b = index == -1 ? false : true;  //b只用了一次可以省略
+        return b;
+        return index == -1 ? false : true;
+    }
+    var resultB = find('一张网页，要经历怎么的过程，用户', '用户');
+    console.log(resultB);//true
+    var resultA = find('我爱北京天安门', '的');
+    console.log(resultA);//false
+
+    //    //method3 三目运算1
+    //    function find(str, searchStr) {
+    //        return str.indexOf(searchStr)==-1?false:true;
+    //        return str.indexOf(searchStr)!=-1;
+    //    }
+    //    var resultB = find('一张网页，要经历怎么的过程，用户', '用户');
+    //    console.log(resultB);//true
+    //    var resultA=find('我爱北京天安门','的');
+    //    console.log(resultA);//false
+</script>
+</body>
+</html>

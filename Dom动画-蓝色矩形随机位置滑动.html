@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div id="box" style="width:100px; height:100px; background:#00F; position:absolute;"></div>
+
+<script type="text/javascript" src="js/raf.js"></script>
+<script type="text/javascript">
+
+    var dx = 0;//用来存放终点x坐标
+    var dy = 0;//用来存放终点y坐标
+    var x = 0;//用来存放当前x坐标
+    var y = 0;//用来存放当前y坐标
+    var box;//用来存放id叫box的div
+
+    init();
+    function init() {
+        box = document.getElementById("box");//获取id为box的div
+        dx = Math.random() * 800;//随机一个800以内的数字，作为水平的终点值
+        dy = Math.random() * 800;//随机一个800以内的数字，作为垂直的终点值
+
+        loop();//setInterval(loop, 1000);换成注释里的代码，会减慢移动速度，每秒钟发生一次变化，而不是每秒钟触发60次
+    }
+
+    function loop() {
+        requestAnimationFrame(loop);//使用第三方类库(js文件夹中的raf.js)来触发帧频函数，不断执行loop函数(每秒钟触发60次)
+
+        x += (dx - x) * 0.1;//增加单次移动的距离 距离差（终点坐标-当前坐标）*0.1
+        y += (dy - y) * 0.1;//增加单次移动的距离 距离差（终点坐标-当前坐标）*0.1
+
+        box.style.left = x +"px"; //width可以替换成left
+        box.style.top = y +"px"; //height可以替换成top 然后查看效果
+
+        if(Math.abs(x-dx) < 1) {//当前距离和终点距离小于1时（其实就是到达了终点），再重新给终点随机一个新的坐标
+            dx = Math.random() * 800;
+            dy = Math.random() * 800;
+        }
+    }
+
+</script>
+</body>
+</html>

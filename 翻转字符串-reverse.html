@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*反转字符串 
+     编写函数 reverse,满足
+     reverse('abcd'); // 输出 'dcba'
+     reverse('a'); // 输出 'a'*/
+    "use strict";
+    function reverse(str) {
+        var arr = [];
+        var Str = str.toString();
+        var arr1 = Str.split('');
+        while (arr1.length > 0) {
+            arr.push(arr1.pop());
+            var result = arr.join('');
+        }
+        result.toString();
+        return arr;
+    }
+    console.log(reverse('abcd'));
+    console.log(reverse(1234));
+</script>
+</body>
+</html>

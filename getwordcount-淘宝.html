@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    var str='今天我在淘宝上淘了一本书';
+    //    console.log(str.indexOf('淘', 5));//从下标5开始寻找
+
+
+    //出现次数  用循环 index+1 字符串的下一位继续查询
+        var str = '今天我在淘宝上淘了一本书，我喜欢上淘宝，基本每天都在淘宝';
+        function getWordCount(str, searchStr) {
+            var sum = 0;
+            var index = str.indexOf(searchStr);
+            while (index != -1) {
+                sum++;
+                index = str.indexOf(searchStr, index + 1);
+            }
+            return sum;
+        }
+        console.log(getWordCount(str, '淘宝'));//3
+        console.log(getWordCount(str, '淘'));4//
+        console.log(getWordCount(str, '天气'));//0
+    //repeat
+    //    function getWordsCount(str,findWords) {
+    //        var count=0;
+    //        var index=str.indexOf(findWords);
+    //        while (index!=-1){
+    //            count++;
+    //            index=str.indexOf(findWords,index+1);
+    //        }
+    //        return count;
+    //    }
+    //    var str = '今天我在淘宝上淘了一本书，我喜欢上淘宝，基本每天都在淘宝';
+    //    console.log(getWordCount(str, '天气'));
+</script>
+</body>
+</html>

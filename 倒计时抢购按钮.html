@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3秒后可以抢购</title>
+</head>
+<body>
+<button id="btn" disabled style="width: 50px;height: 50px">抢购</button>
+<div id="box"></div>
+<script>
+    var box = document.getElementById('box');
+    var btn = document.getElementById('btn');
+    var count = 3;
+    var intervalId = setInterval(countDown, 1000);
+    countDown();
+    function countDown() {
+        if (count == -1) {
+            clearInterval(intervalId);
+            return;
+        }
+        if (count == 0) {
+            btn.removeAttribute('disabled');
+        }
+        box.innerHTML = count;
+        count--;
+    }
+</script>
+</body>
+</html>

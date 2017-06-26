@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //快速生成常见的简单验证码 4位数字字母组成
+    function getRandom(small, big) {
+        return Math.floor(Math.random() * (big - small + 1) + small);
+    }
+    function yanZhengMa() {
+        var Arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'g', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+            , 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        //0-35
+        var tempArr = [];
+        for (var i = 0; i < 4; i++) {
+            var index = getRandom(0, Arr.length - 1);
+            var indexvalue = Arr[index];
+            tempArr.push(indexvalue);
+        }
+        var str = tempArr.join('');
+        return str;
+    }
+    console.log(yanZhengMa());
+</script>
+</body>
+</html>

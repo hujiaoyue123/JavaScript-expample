@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //重复字符串
+    //    function repeatStr(str, num) {
+    //        var str1 = '';
+    //        for (var i = 1; i <= num; i++) {
+    //            str1 += str;
+    //        }
+    //        return str1;
+    //    }
+    //    var result = repeatStr("*", 2);
+    //    console.log(result);
+    //    console.log(repeatStr("abc", 3));
+
+
+    //重复字符串
+    function repeatStr(str, num) {
+        var str1 = '';
+        while (num > 0) {
+            str1 += str;
+            num--;
+        }
+        return str1;
+    }
+    var result = repeatStr("*", 3);
+    console.log(result);
+    console.log(repeatStr("abc", 3));
+    console.log(repeatStr('abc', -2));
+</script>
+</body>
+</html>

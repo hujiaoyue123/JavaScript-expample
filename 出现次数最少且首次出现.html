@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<!--实现一个算法，寻找字符串中出现次数最少的、并且首次出现位置最前的字符。如cbaacfdeaebb，-->
+<!--符合要求的是f，因为他只出现了一次（次数最少）。并且比其他只出现一次的字符（如d）首次出现的位置最靠前。-->
+<!--cbaacfdeaebb-->
+<script>
+    //  方法一用正则
+    function jianCe(str) {
+        var arr = str.split('');
+        //字符串去重
+        var noRepeatArr=[];
+        for (var i=0;i<arr.length;i++){
+            if(noRepeatArr.indexOf(arr[i])==-1){
+                noRepeatArr.push(arr[i])
+            }
+        }
+        noRepeatArr.sort(function (a,b) {
+            var reg1 = new RegExp(a,'g');
+            var reg2 = new RegExp(b,'g');
+            return str.match(reg1).length > str.match(reg2).length;  //去重的时候已经保证了相同数量的字母，位置在前的，在去重后和排序都是在前的，不需再用if
+        });
+        return noRepeatArr; //得到的结果先按次数排序，再按位置排序
+    }
+    document.write('<h3>实现一个算法，寻找字符串中出现次数最少的、并且首次出现位置最前的字符。如cbaacfdeaebb，符合要求的是f，因为他只出现了一次（次数最少）。并且比其他只出现一次的字符（如d）首次出现的位置最靠前。</h3>');
+    document.write('cbaacfdeaebb 检测后各字母排序为： '+ jianCe('cbaacfdeaebb')+ ' 符合要求的是： '+jianCe('cbaacfdeaebb')[0]);
+    document.write('<hr/>');
+</script>
+<script>
+    //方法二 sort二次排序法
+    // cbaacfdeaebb
+        var arr = [
+            {name:'c',time:1,count:2},
+            {name:'b',time:2,count: 3},
+            {name:'a',time:3,count: 3},
+            {name:'f',time:4,count:1},
+            {name:'d',time:5,count:1},
+            {name:'e',time:6,count: 2}];
+        function object(str) {
+            var arr = str.split('');
+            //字符串去重
+            var noRepeatArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (noRepeatArr.indexOf(arr[i]) == -1) {
+                    noRepeatArr.push(arr[i])
+                }
+            }
+            console.log(noRepeatArr);
+            var arrObj = [];
+            for(var i=0;i<noRepeatArr.length;i++) {
+                arrObj[i]= {};
+                arrObj[i]['name'] = noRepeatArr[i];
+            }
+     console.log('testtest '+ arrObj);
+        }
+        object('cbaacfdeaebb');
+        arr.sort(function (a, b) {
+            if(a.count==b.count){
+                return a.time>b.time;
+            }
+            else{
+                return a.count>b.count;
+            }
+        })
+        console.log(arr[0].name);
+</script>
+</body>
+</html>

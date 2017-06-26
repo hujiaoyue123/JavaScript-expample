@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1元20张 2元10张 5元4张  凑钱 1 ，2 ，5凑20元钱有多少可能？ 弹出几次窗口就是有几种可能 29次
+    var total = 0;
+    for (var i = 0; i <= 20; i++) {
+        for (j = 0; j <= 10; j++) {
+            for (k = 0; k <= 4; k++) {
+                if (i * 1 + j * 2 + k * 5 == 20) { //共执行了21*11*5次
+                    total++;
+                    //                    console.log('凑够了');
+                    document.write('一元:' + i + ' ' + '两元:' + j + ' ' + '五元:' + k + '<br>');
+                }
+            }
+        }
+    }
+    document.write('凑到了' + total + '次');
+</script>
+</body>
+</html>

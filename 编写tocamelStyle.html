@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //编写函数 toCamelStyle,满足
+    //toCamelStyle('abc_bcd');  // 输出 'abcBcd'
+    //toCamelStyle('a_3_c_d_ef');  // 输出 'a3CDEf'
+    //toCamelStyle('_a_b_c_d_ef');  // 输出 '_aBCDEf'
+
+    function toCamelStyle(str) {
+        var arr = str.split('_');
+        var firstSpace = false;
+        if (arr[0] == '') {
+            firstSpace = true;
+            arr.shift();
+        }
+        for (var i in arr) {
+            var str = arr[i];
+            if (i != 0) {
+                arr[i] = str[0].toUpperCase() + str.slice(1);
+            }
+        }
+        if (firstSpace) {
+            arr.unshift('_');
+        }
+        return arr.join('');
+    }
+    console.log(toCamelStyle('abc_bcd'));
+    console.log(toCamelStyle('a_3_c_d_ef'));
+    console.log(toCamelStyle('_a_b_c_d_ef'));
+    console.log(toCamelStyle('_abc_d_ef'));
+</script>
+<script>
+    //lxy
+//    function toCamelStyle(str) {
+//        var index = str.indexOf('_');
+//        var result = '';
+//        var indexBefore = 0; //一开始的索引是0,index的上一个索引值
+//        while (index != -1) {
+//            if (!index) {
+//                result += str.substring(0, 2); //'_'在第一个位置则保留,并且其后面的字母不大写
+//            } else {
+//                result += str.substring(indexBefore, index) + str.charAt(index + 1).toUpperCase();
+//            }
+//            indexBefore = index + 2;
+//            index = str.indexOf('_', indexBefore);
+//        }
+//        result += str.substring(indexBefore);
+//        return result;
+//    }
+</script>
+</body>
+</html>

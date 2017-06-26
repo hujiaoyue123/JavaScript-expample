@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //写数组函数 获取数组中数字大于0的元素
+    var arr = [1, -2, 22, 33];
+    function getBig0(a) {
+        var result = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    }
+    console.log(getBig0(arr));
+
+    //    function getBigger0(arr1) {
+    //        var result=[];
+    //        for(var i=0;i<arr1.length;i++){
+    //            if(arr1[i]>0){
+    //                result.push(arr1[i]);
+    //            }
+    //        }
+    //        return result;
+    //    }
+
+    //    var arr11=[1,-2,22,33,9,0,-4];
+    //    console.log(getBigger0(arr11));
+
+    //    var arr3=getBigger0([1,-2,22,33,9,0,-4]);
+    //    console.log(arr3);
+</script>
+</body>
+</html>

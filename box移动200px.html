@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #my-div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">向右移动200px</button>
+<button id="btn1" style="position: absolute; left: 200px;">向下移动50px</button>
+<div id="my-div">
+</div>
+<script>
+    var btn=document.getElementById('btn');
+    var btn1=document.getElementById('btn1');
+    var myDiv=document.getElementById('my-div');
+    btn.addEventListener('click',function () {
+        myDiv.style.marginLeft=myDiv.offsetLeft+200+'px';
+    })
+    btn1.addEventListener('click',function () {
+        myDiv.style.marginTop=myDiv.offsetTop+50+'px';
+    })
+</script>
+</body>
+</html>

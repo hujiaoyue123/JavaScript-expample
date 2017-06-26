@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取当前时间/活了多少天/点按钮计时</title>
+</head>
+<body>
+<input type="text" id="txt">
+<button id="btn">点我开始计时</button>
+<script>
+    //点按钮第一次开始计时，计时开始,按钮文字显示终止计时
+    //点按钮第二次终止计时 ，文本框显示 相差多少毫秒
+    var txt=document.getElementById('txt');
+    var btn=document.getElementById('btn');
+    var firstTime;
+    btn.addEventListener('click',function () {
+        if(!firstTime){ //  if(firstTime==undefined)
+            firstTime=new Date();
+            txt.value='计时中';
+            btn.innerHTML='终止计时';
+        }else {
+            var timeDiff=new Date()-firstTime;
+            var Diff3000=timeDiff-3000;
+            if (Diff3000<0){
+                txtTxt='你提前了'+Math.abs(Diff3000)/1000+'秒';
+            }else if(Diff3000>0){
+                txtTxt='你延迟了'+Diff3000/1000+'秒';
+            }else{
+                txtTxt='你很准！';
+            }
+            txt.value=txtTxt;
+            btn.innerHTML='点我开始计时';
+            firstTime=null;
+        }
+    });
+</script>
+<script>
+    //活了多少天
+    var time1=new Date();
+    var time2=new Date(1996,10,10);
+    var day=(time1-time2)/1000/60/60/24;
+    console.log(day);
+</script>
+<script>
+   // 获取当前时间
+        var date=new Date();
+        console.log(date);
+        console.log(Date());
+        var str='';
+        var days=['日','一','二','三','四','五','六']
+        str=date.getFullYear()+'年'+(date.getMonth()+1)+'月'+date.getDate()+'日'+date.getHours()+'时'+date.getMinutes()+'分'+date.getSeconds()+'秒'+'星期'+days[date.getDay()];
+        console.log(str);
+</script>
+</body>
+</html>

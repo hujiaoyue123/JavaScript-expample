@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //object  键：值
+    var zhege;
+    zhege = {
+        name: '李哲',
+        sex: '男',
+        home: '西安',
+        skill: ['html', 'css', 'js'],
+        baby: [{name: '李1', sex: '女'}, {name: '李2', sex: '男'}],
+        say: function () {
+            alert('哈哈');
+        },
+        eat: function (foods) {
+            for (var i = 0; i < foods.length; i++) {
+                alert('我吃了' + foods[i]);
+            }
+        }
+    };
+    console.log(zhege.say());
+    zhege.eat(['鸡腿', '可乐']);
+    zhege.eat(['鸭腿', '雪碧']);
+</script>
+</body>
+</html>

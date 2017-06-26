@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 20px;
+            height: 20px;
+            border: 15px solid red;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function Box(x, y) {
+        this.bLeft = x;
+        this.bTop = y;
+        this.init();
+    }
+    Box.prototype = {
+        init: function () {
+            this.isMoveing = true;//标识位
+            console.log(this.bLeft, this.bTop);
+            this.isRight = 1;
+            this.isBottom = 1;
+            this.createBox();
+            this.startMove();
+        },
+        createBox: function () {
+            this.box = document.createElement('div');
+            var className = document.createAttribute('class');
+            className.value = 'box';
+            this.box.setAttributeNode(className);
+            this.box.style.borderColor = '#' + (Math.random().toString(16)).substr(-6);
+            document.body.appendChild(this.box)
+        },
+        startMove: function () {
+            console.log('###');
+            var _this = this;
+            _this.isMoveing = true;//控制台
+            _this.intervaId = setInterval(function () {
+                _this.bLeft += 2 * _this.isRight;
+                _this.bTop += 2 * _this.isBottom;
+                if (_this.bLeft >= (window.innerWidth - 30 )) {
+                    _this.bLeft = 0;
+                }
+                if (_this.bTop >= (window.innerHeight - 30)) {
+                    _this.bTop = 0;
+                }
+                _this.box.style.left = _this.bLeft + 'px';
+                _this.box.style.top = _this.bTop + 'px';
+            }, 30);
+        },
+    };
+    for (var i = 0; i <= 20; i++) {
+        var x = parseInt(Math.random() * window.innerWidth);
+        var y = parseInt(Math.random() * window.innerHeight);
+        var box = new Box(x, y);
+    }
+</script>
+</body>
+</html>

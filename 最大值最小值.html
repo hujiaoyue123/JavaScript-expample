@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+       //最小最大值 Math.max
+        var arr = [21, 44, 33, 4, 5, 6, 7, 555, 6, 6];
+        var arrmin = [61, 22, 5, -6, 31, 4, 5, -2, 10, 8];
+        var num= Math.max.apply(null,arr);//数组
+        var num1= Math.max.call(this,21, 44, 33, 4, 5, 6, 7, 555, 6, 6);//call参数列表
+        console.log(num);
+        console.log(num1);
+        var mina=Math.min.apply(null,arrmin);
+        console.log(mina);
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //call和apply
+    var someObj = {
+        name: 'huang1',
+        sayName: function (who) {
+            return who + ',' + this.name;
+        }
+    }
+    someObj.sayName('小明');
+    var myObj = {name: 'huang2'};
+    console.log(someObj.sayName.call(myObj, '小王'));
+
+
+    //    var someObj = {
+    //        name: 'huang1',
+    //        sayName: function (who,who1) {
+    //            return who +who1+ ':' + this.name;
+    //        }
+    //    }
+    //    var myObj = {name: 'huang2'};
+    //    console.log(someObj.sayName.call(myObj, '小白'));//myObj想用someObj的sayName的方法
+    //    console.log(someObj.sayName.call(myObj, '小白','小张'));//参数列表
+    //    console.log(someObj.sayName.apply(myObj, ['小红', '小张']));//数组 写法技巧不同 看着更加简洁
+</script>
+</body>
+</html>

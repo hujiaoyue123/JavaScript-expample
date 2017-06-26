@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //arguments 每个函数都有这个参数
+    //arguments就是sum(1,2,3)里的1,2,3 可用于任意数的加法
+    function sum() {
+        var sumNum = 0;
+        for (var i = 0; i < arguments.length; i++) {
+            sumNum += arguments[i];
+        }
+        return sumNum;
+    }
+    console.log(sum(2, 4, 5));
+</script>
+</body>
+</html>

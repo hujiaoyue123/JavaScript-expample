@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //求圆面积
+    function getCircleArea(r) {
+        // var Area=Math.PI*r*r;
+        var Area = Math.PI * Math.pow(r, 2);
+        return Area;
+    }
+    var result = getCircleArea(2);
+    document.write(result);
+    //长方形面积
+    function getRectArea(width, height) {
+        return width * height;
+    }
+    var result1 = getRectArea(3, 5);
+    document.write(result1);
+</script>
+</body>
+</html>

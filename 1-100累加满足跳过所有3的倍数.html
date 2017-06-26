@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    ////1-100累加1 1+2 1+2+3  跳过所有3的倍数1 1+2  1+2+4 1+2+4+5  3 13 30 33 43 53 63
+    var add = 0;
+    for (var i = 1; i <= 100; i++) {
+        if(i%3==0||parseInt(i/10)==3||(i%10)==3){
+            console.log(i);
+            continue;
+        }
+        add += i;
+    //    console.log(add);
+    }
+    document.write(add);
+</script>
+</body>
+</html>

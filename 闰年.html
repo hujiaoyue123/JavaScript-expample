@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1950--2050所有的闰年：闰年 1能被4整除而不能被100整除 或者2能被400整除
+    document.write('1950--2050所有的闰年：'+'<br/>');
+    for (var year = 1950; year <= 2050; year++) {
+        if (year % 4 == 0 && year % 100 !== 0) {
+            document.write(year + '&nbsp');
+        }
+        if (year % 400 == 0) {
+            document.write(year + '&nbsp');
+        }
+    }
+</script>
+</body>
+</html>

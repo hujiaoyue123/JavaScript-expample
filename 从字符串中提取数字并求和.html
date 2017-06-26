@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //用js编写一个函数，从一个任意字符串中提取所有的数字，然后将它们添加在一起
+    //Input:  “We have 30 apples will be handed out to 10 students who need it, containing 5 foreigners ”.Output: 30 + 10 + 5 = 45
+        function numAdd(str) {
+            var result=0;
+            var arr=[];
+            var arr1=[];
+            arr=str.split(' ');
+            for(var i=0;i<arr.length;i++){
+                if(!isNaN(arr[i])){
+                    arr1.push(arr[i]);
+                }
+            }
+            var str1=0;
+            for(var i=0;i<arr1.length;i++){
+                str1+=parseInt(arr1[i]);
+            }
+            return str1;
+        }
+        console.log(numAdd('We have 30 apples will be handed out to 10 students who need it, containing 5 foreigners'));//30 + 10 + 5 = 45
+
+</script>
+</body>
+</html>

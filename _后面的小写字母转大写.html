@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //将字符串中 _ 后面的小写字母变大写，并且删除 _
+    /*toCamelStyle('abc_bcd');  // 输出 'abcBcd'
+     toCamelStyle('a_3_c_d_ef');  // 输出 'a3CDEf'
+     toCamelStyle('_a_b_c_d_ef');  // 输出 '_aBCDEf'
+     */
+        function toCamelStyle(str) {
+            var result = '';
+            var indexBefor = 0;
+            var index = str.indexOf('_');
+            if (index == 0) {
+                result += str.substring(0, 2);
+                indexBefor = index + 2;
+                index = str.indexOf('_', indexBefor);
+            }
+            while (index != -1) {
+                result += str.substring(indexBefor, index) + str.charAt(index + 1).toUpperCase();
+                indexBefor = index + 2;
+                index = str.indexOf('_', indexBefor);
+            }
+            result += str.substring(indexBefor);
+            return result;
+        }
+        console.log(toCamelStyle('abc_bcd'));//输出 'abcBcd'
+        console.log(toCamelStyle('_abc_bc_d'));// 输出 '_abcBcd'
+        console.log(toCamelStyle('a_3_c_d_ef'));// 输出 'a3CDEf'
+        console.log(toCamelStyle('_a_b_c_d_ef'));//输出 '_aBCDEf
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //输出正三角
+    "use strict";
+    for (var i = 1; i <= 10; i++) {
+        for (var j = 0; j < i; j++) {
+            document.write('*');
+        }
+        document.write('<br/>')
+    }
+    document.write('<br/>')
+    //输出倒三角
+    for (var i = 10; i >= 1; i--) {
+        for (var j = 0; j < i; j++) {
+            document.write('*');
+        }
+        document.write('<br/>')
+    }
+    document.write('<br/>')
+    //输出倒三角 方法二
+    for (var i = 0; i < 10; i++) {
+        for (var j = 10 - i; j > 0; j--) {
+            document.write('*');
+        }
+        document.write('<br/>')
+    }
+</script>
+</body>
+</html>

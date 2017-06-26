@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //首字母改大写 
+        function firstLetterToUpperCase(str) {
+            str.toString();
+            var result=str;
+            if(isNaN(str)){
+                var str1='';
+                 str1+=str[0].toUpperCase()+str.substring(1);
+                 result=str1;
+            }
+            return result;
+        }
+        console.log(firstLetterToUpperCase('hello')); // 输出'Hello'
+        console.log(firstLetterToUpperCase('World')); // 输出 'World'
+        console.log(firstLetterToUpperCase(345)); // 输出 345
+        console.log(firstLetterToUpperCase(56));
+</script>
+</body>
+</html>
